@@ -2,9 +2,12 @@
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 import re
+import encrypt_auth
 
 # Authenticate using Service Account
-SERVICE_ACCOUNT_FILE = 'authtest-448709-424a7e65caa5.json'  # Path to your service account JSON file
+SERVICE_ACCOUNT_FILE_ENC = 'auth.json.enc'
+encrypt_auth.decrypt_auth_file(SERVICE_ACCOUNT_FILE_ENC)
+SERVICE_ACCOUNT_FILE = 'auth.json'  # Path to your service account JSON file
 SCOPES = ['https://www.googleapis.com/auth/documents', 'https://www.googleapis.com/auth/drive']
 
 credentials = service_account.Credentials.from_service_account_file(
@@ -332,4 +335,4 @@ def read_and_create_google_doc(file_path, title="Some Title", email=None):
         print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
-    read_and_create_google_doc('./data/input.md', title="Some title", email="ndsjrrr@gmail.com")
+    read_and_create_google_doc('input.md', title="Some title", email=None)
