@@ -1,6 +1,6 @@
 # Markdown to Google Docs Converter
 
-[Public GitHub repository link](https://github.com/ndsjrrr/markdown-to-gdocs)
+[Public GitHub repository link](https://github.com/ndsjrrr/markdown-to-gdocs): https://github.com/ndsjrrr/markdown-to-gdocs
 
 A Python script that converts Markdown files to Google Docs while preserving formatting, including headers, bullet points, checkboxes, and @mentions. The tool automatically creates a new Google Doc and makes it publicly accessible.
 
