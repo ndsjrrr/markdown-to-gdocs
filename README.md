@@ -52,15 +52,14 @@ A Python script that converts Markdown files to Google Docs while preserving for
 0. (Optional) Create a new project in Google Cloud Console
    - Enable the Google Docs API and Google Drive API
    - Create a Service Account and download the credentials JSON file
-   - Rename the credentials file to `auth.json`
+   - Rename the credentials file to `my_auth.json`
 1. Open the provided `mdToGoogleDocs.ipynb` in Google Colab
-2. Upload your service account credentials file and place it in the project root
+2. (Optional) Upload your service account credentials file my_auth.json and place it in the project root and comment out these two line and add my_auth.json here.
+```python
+# SERVICE_ACCOUNT_FILE_ENC = 'auth.json.enc'
+# encrypt_auth.decrypt_auth_file(SERVICE_ACCOUNT_FILE_ENC)
+SERVICE_ACCOUNT_FILE = 'my_auth.json'
+```
 3. (Optional) Input your email and your desired google docs title if you want edit access: process_markdown_file('./data/input.md', title="Meeting Notes", email="your_email@gmail.com")
 4. Run all cells in the notebook 
 5. The script will create a new Google Doc and print its URL in the console 
-
-## Dependencies
-
-- google-api-python-client: Google API client library
-- google-auth-httplib2: Google authentication library
-- google-auth-oauthlib: OAuth 2.0 library for Google APIs
